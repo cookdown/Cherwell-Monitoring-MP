@@ -13,25 +13,32 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\Debug\</OutputPath>
-    <GenerateSealed>false</GenerateSealed>
-    <Company>MyCompany</Company>
-    <Copyright>Copyright (c) MyCompany. All rights reserved.</Copyright>
-    <DelaySigning>false</DelaySigning>
-    <AssemblyOriginatorKeyFile />
+    <GenerateSealed>True</GenerateSealed>
+    <Company>Cookdown LTD</Company>
+    <Copyright>Copyright (c) Cookdown. All rights reserved.</Copyright>
+    <DelaySigning>False</DelaySigning>
+    <AssemblyOriginatorKeyFile>C:\Users\Nathan\Cookdown\Engineering - Documents\Security\Signing Certs\CookdownCommunity.ManagementPacks.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugSymbols>false</DebugSymbols>
     <OutputPath>bin\Release\</OutputPath>
-    <DelaySigning>false</DelaySigning>
-    <Company>MyCompany</Company>
-    <Copyright>Copyright (c) MyCompany. All rights reserved.</Copyright>
+    <DelaySigning>False</DelaySigning>
+    <Company>Cookdown LTD</Company>
+    <Copyright>Copyright (c) Cookdown. All rights reserved.</Copyright>
     <DelaySign>false</DelaySign>
-    <AssemblyOriginatorKeyFile />
+    <AssemblyOriginatorKeyFile>C:\Users\Nathan\Cookdown\Engineering - Documents\Security\Signing Certs\CookdownCommunity.ManagementPacks.snk</AssemblyOriginatorKeyFile>
+    <GenerateSealed>True</GenerateSealed>
   </PropertyGroup>
   <ItemGroup>
     <ManagementPackReference Include="Microsoft.SystemCenter.Library">
       <Alias>SC</Alias>
       <PackageToBundle>false</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.NTService.Library">
+      <HintPath>C:\Program Files (x86)\System Center Visual Studio Authoring Extensions\References\OM2012R2\Microsoft.SystemCenter.NTService.Library.mp</HintPath>
+      <Alias>MicrosoftSystemCenterNTServiceLibrary</Alias>
+      <MinVersion>7.1.10226.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.Windows.Library">
       <Alias>Windows</Alias>
@@ -49,6 +56,53 @@
       <Alias>Visualization</Alias>
       <PackageToBundle>false</PackageToBundle>
     </ManagementPackReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes" />
+    <Folder Include="Discoveries" />
+    <Folder Include="Monitoring" />
+    <Folder Include="Relationship" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\CherwellServerInstallation.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\CherwellServices.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\ConnectionDefinition.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\SqlConnection.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\WcfServer.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Discoveries\CherwellInstallation.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Discoveries\DiscoverServices.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Discoveries\ServerDetailsDiscovery.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ManagementPack.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Monitoring\ServiceMonitors.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Relationship\CherwellInstallationHostsConnection.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Relationship\CherwellInstallationHostsServices.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Discoveries\ServerDetails.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VSAC\Microsoft.SystemCenter.OperationsManager.targets" />
 </Project>

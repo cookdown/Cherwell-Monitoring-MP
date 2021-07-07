@@ -1,0 +1,184 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Monitoring>
+    <Monitors>
+      <UnitMonitor ID="CookdownCommunity.Cherwell.Monitoring.CherwellMQSService.ServiceState.Monitor" Accessibility="Public" Enabled="true" Target="CookdownCommunity.Cherwell.Monitoring.CherwellMQSService" ParentMonitorID="Health!System.Health.AvailabilityState" Remotable="true" Priority="Normal" TypeID="Windows!Microsoft.Windows.CheckNTServiceStateMonitorType" ConfirmDelivery="false">
+        <Category>AvailabilityHealth</Category>
+        <AlertSettings AlertMessage="CookdownCommunity.Cherwell.Monitoring.CherwellMQSService.ServiceState.Monitor.AlertMessage">
+          <AlertOnState>Error</AlertOnState>
+          <AutoResolve>true</AutoResolve>
+          <AlertPriority>High</AlertPriority>
+          <AlertSeverity>Error</AlertSeverity>
+          <AlertParameters>
+            <AlertParameter1>$Target/Property[Type="MicrosoftSystemCenterNTServiceLibrary!Microsoft.SystemCenter.NTService"]/DisplayName$</AlertParameter1>
+            <AlertParameter2>$Target/Host/Property[Type="Windows!Microsoft.Windows.Computer"]/NetworkName$</AlertParameter2>
+          </AlertParameters>
+        </AlertSettings>
+        <OperationalStates>
+          <OperationalState ID="Success" MonitorTypeStateID="Running" HealthState="Success" />
+          <OperationalState ID="Error" MonitorTypeStateID="NotRunning" HealthState="Error" />
+        </OperationalStates>
+        <Configuration>
+          <ComputerName>$Target/Host/Property[Type="Windows!Microsoft.Windows.Computer"]/NetworkName$</ComputerName>
+          <ServiceName>$Target/Property[Type="MicrosoftSystemCenterNTServiceLibrary!Microsoft.SystemCenter.NTService"]/ServiceName$</ServiceName>
+          <CheckStartupType>true</CheckStartupType>
+        </Configuration>
+      </UnitMonitor>
+      <UnitMonitor ID="CookdownCommunity.Cherwell.Monitoring.CherwellMQSService.CPUUsage.Monitor" Accessibility="Public" Enabled="true" Target="CookdownCommunity.Cherwell.Monitoring.CherwellMQSService" ParentMonitorID="Health!System.Health.PerformanceState" Remotable="true" Priority="Normal" TypeID="MicrosoftSystemCenterNTServiceLibrary!Microsoft.SystemCenter.NTService.ConsecutiveSamplesThreshold.ErrorOnTooHigh" ConfirmDelivery="false">
+        <Category>PerformanceHealth</Category>
+        <AlertSettings AlertMessage="CookdownCommunity.Cherwell.Monitoring.CherwellMQSService.CPUUsage.Monitor.AlertMessage">
+          <AlertOnState>Error</AlertOnState>
+          <AutoResolve>true</AutoResolve>
+          <AlertPriority>Normal</AlertPriority>
+          <AlertSeverity>Warning</AlertSeverity>
+          <AlertParameters>
+            <AlertParameter1>$Target/Property[Type="MicrosoftSystemCenterNTServiceLibrary!Microsoft.SystemCenter.NTService"]/DisplayName$</AlertParameter1>
+            <AlertParameter2>$Data/Context/SampleValue$</AlertParameter2>
+          </AlertParameters>
+        </AlertSettings>
+        <OperationalStates>
+          <OperationalState ID="OK" MonitorTypeStateID="SampleCountNormal" HealthState="Success" />
+          <OperationalState ID="Error" MonitorTypeStateID="SampleCountTooHigh" HealthState="Error" />
+        </OperationalStates>
+        <Configuration>
+          <ServiceName>$Target/Property[Type="MicrosoftSystemCenterNTServiceLibrary!Microsoft.SystemCenter.NTService"]/ServiceName$</ServiceName>
+          <ObjectName>Process</ObjectName>
+          <CounterName>Percent Processor Time</CounterName>
+          <InstanceProperty>Name</InstanceProperty>
+          <ValueProperty>PercentProcessorTime</ValueProperty>
+          <Frequency>300</Frequency>
+          <ScaleBy>$Target/Host/Property[Type="Windows!Microsoft.Windows.Computer"]/LogicalProcessors$</ScaleBy>
+          <Threshold>40</Threshold>
+          <NumSamples>2</NumSamples>
+        </Configuration>
+      </UnitMonitor>
+      <UnitMonitor ID="CookdownCommunity.Cherwell.Monitoring.CherwellServiceHost.ServiceState.Monitor" Accessibility="Public" Enabled="true" Target="CookdownCommunity.Cherwell.Monitoring.CherwellServiceHost" ParentMonitorID="Health!System.Health.AvailabilityState" Remotable="true" Priority="Normal" TypeID="Windows!Microsoft.Windows.CheckNTServiceStateMonitorType" ConfirmDelivery="false">
+        <Category>AvailabilityHealth</Category>
+        <AlertSettings AlertMessage="CookdownCommunity.Cherwell.Monitoring.CherwellServiceHost.ServiceState.Monitor.AlertMessage">
+          <AlertOnState>Error</AlertOnState>
+          <AutoResolve>true</AutoResolve>
+          <AlertPriority>High</AlertPriority>
+          <AlertSeverity>Error</AlertSeverity>
+          <AlertParameters>
+            <AlertParameter1>$Target/Property[Type="MicrosoftSystemCenterNTServiceLibrary!Microsoft.SystemCenter.NTService"]/DisplayName$</AlertParameter1>
+            <AlertParameter2>$Target/Host/Property[Type="Windows!Microsoft.Windows.Computer"]/NetworkName$</AlertParameter2>
+          </AlertParameters>
+        </AlertSettings>
+        <OperationalStates>
+          <OperationalState ID="Success" MonitorTypeStateID="Running" HealthState="Success" />
+          <OperationalState ID="Error" MonitorTypeStateID="NotRunning" HealthState="Error" />
+        </OperationalStates>
+        <Configuration>
+          <ComputerName>$Target/Host/Property[Type="Windows!Microsoft.Windows.Computer"]/NetworkName$</ComputerName>
+          <ServiceName>$Target/Property[Type="MicrosoftSystemCenterNTServiceLibrary!Microsoft.SystemCenter.NTService"]/ServiceName$</ServiceName>
+          <CheckStartupType>true</CheckStartupType>
+        </Configuration>
+      </UnitMonitor>
+      <UnitMonitor ID="CookdownCommunity.Cherwell.Monitoring.CherwellServiceHost.CPUUsage.Monitor" Accessibility="Public" Enabled="true" Target="CookdownCommunity.Cherwell.Monitoring.CherwellServiceHost" ParentMonitorID="Health!System.Health.PerformanceState" Remotable="true" Priority="Normal" TypeID="MicrosoftSystemCenterNTServiceLibrary!Microsoft.SystemCenter.NTService.ConsecutiveSamplesThreshold.ErrorOnTooHigh" ConfirmDelivery="false">
+        <Category>PerformanceHealth</Category>
+        <AlertSettings AlertMessage="CookdownCommunity.Cherwell.Monitoring.CherwellServiceHost.CPUUsage.Monitor.AlertMessage">
+          <AlertOnState>Error</AlertOnState>
+          <AutoResolve>true</AutoResolve>
+          <AlertPriority>Normal</AlertPriority>
+          <AlertSeverity>Warning</AlertSeverity>
+          <AlertParameters>
+            <AlertParameter1>$Target/Property[Type="MicrosoftSystemCenterNTServiceLibrary!Microsoft.SystemCenter.NTService"]/DisplayName$</AlertParameter1>
+            <AlertParameter2>$Data/Context/SampleValue$</AlertParameter2>
+          </AlertParameters>
+        </AlertSettings>
+        <OperationalStates>
+          <OperationalState ID="OK" MonitorTypeStateID="SampleCountNormal" HealthState="Success" />
+          <OperationalState ID="Error" MonitorTypeStateID="SampleCountTooHigh" HealthState="Error" />
+        </OperationalStates>
+        <Configuration>
+          <ServiceName>$Target/Property[Type="MicrosoftSystemCenterNTServiceLibrary!Microsoft.SystemCenter.NTService"]/ServiceName$</ServiceName>
+          <ObjectName>Process</ObjectName>
+          <CounterName>Percent Processor Time</CounterName>
+          <InstanceProperty>Name</InstanceProperty>
+          <ValueProperty>PercentProcessorTime</ValueProperty>
+          <Frequency>300</Frequency>
+          <ScaleBy>$Target/Host/Property[Type="Windows!Microsoft.Windows.Computer"]/LogicalProcessors$</ScaleBy>
+          <Threshold>40</Threshold>
+          <NumSamples>2</NumSamples>
+        </Configuration>
+      </UnitMonitor>
+    </Monitors>
+  </Monitoring>
+  <Presentation>
+    <StringResources>
+      <StringResource ID="CookdownCommunity.Cherwell.Monitoring.CherwellMQSService.ServiceState.Monitor.AlertMessage" />
+      <StringResource ID="CookdownCommunity.Cherwell.Monitoring.CherwellMQSService.CPUUsage.Monitor.AlertMessage" />
+      <StringResource ID="CookdownCommunity.Cherwell.Monitoring.CherwellServiceHost.ServiceState.Monitor.AlertMessage" />
+      <StringResource ID="CookdownCommunity.Cherwell.Monitoring.CherwellServiceHost.CPUUsage.Monitor.AlertMessage" />
+    </StringResources>
+  </Presentation>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellMQSService.ServiceState.Monitor">
+          <Name>Service Running State</Name>
+          <Description>Monitors the current status of the Windows service.  An alert from this monitor indicates the Windows Service is not currently running</Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellMQSService.ServiceState.Monitor" SubElementID="Error">
+          <Name>Service is not running</Name>
+          <Description>Service is not running</Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellMQSService.ServiceState.Monitor" SubElementID="Success">
+          <Name>Service is running</Name>
+          <Description>Service is running</Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellMQSService.ServiceState.Monitor.AlertMessage">
+          <Name>Windows Service Stopped</Name>
+          <Description>The '{0}' service on computer {1} has stopped running</Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellMQSService.CPUUsage.Monitor">
+          <Name>Windows Service CPU Usage Monitor</Name>
+          <Description>Monitors the CPU Usage of the Windows service.</Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellMQSService.CPUUsage.Monitor" SubElementID="Error">
+          <Name>CPU Usage exceeded threshold</Name>
+          <Description>CPUUsage exceeded threshold</Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellMQSService.CPUUsage.Monitor" SubElementID="OK">
+          <Name>CPU Usage within threshold</Name>
+          <Description>CPUUsage within threshold</Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellMQSService.CPUUsage.Monitor.AlertMessage">
+          <Name>CPU Usage threshold exceeded</Name>
+          <Description>The '{0}' service has exceeded the % Processor Time threshold with a value of {1}.</Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellServiceHost.ServiceState.Monitor">
+          <Name>Service Running State</Name>
+          <Description>Monitors the current status of the Windows service.  An alert from this monitor indicates the Windows Service is not currently running</Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellServiceHost.ServiceState.Monitor" SubElementID="Error">
+          <Name>Service is not running</Name>
+          <Description>Service is not running</Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellServiceHost.ServiceState.Monitor" SubElementID="Success">
+          <Name>Service is running</Name>
+          <Description>Service is running</Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellServiceHost.ServiceState.Monitor.AlertMessage">
+          <Name>Windows Service Stopped</Name>
+          <Description>The '{0}' service on computer {1} has stopped running</Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellServiceHost.CPUUsage.Monitor">
+          <Name>Windows Service CPU Usage Monitor</Name>
+          <Description>Monitors the CPU Usage of the Windows service.</Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellServiceHost.CPUUsage.Monitor" SubElementID="Error">
+          <Name>CPU Usage exceeded threshold</Name>
+          <Description>CPUUsage exceeded threshold</Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellServiceHost.CPUUsage.Monitor" SubElementID="OK">
+          <Name>CPU Usage within threshold</Name>
+          <Description>CPUUsage within threshold</Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellServiceHost.CPUUsage.Monitor.AlertMessage">
+          <Name>CPU Usage threshold exceeded</Name>
+          <Description>The '{0}' service has exceeded the % Processor Time threshold with a value of {1}.</Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

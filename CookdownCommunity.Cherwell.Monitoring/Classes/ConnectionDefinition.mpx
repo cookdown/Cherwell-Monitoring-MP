@@ -1,0 +1,55 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <ClassTypes>
+        <ClassType ID="CookdownCommunity.Cherwell.Monitoring.ConnectionDefinition" Base="Windows!Microsoft.Windows.ApplicationComponent" Accessibility="Internal" Abstract="true" Hosted="true" Singleton="false">
+          <Property ID="Name" Type="string"/>
+          <Property ID="Version" Type="string"/>
+          <Property ID="Source" Type="string"/>
+          <Property ID="LastModified" Type="string"/>
+          <Property ID="ID" Key="true" Type="string"/>
+          <Property ID="Disabled" Type="string"/>
+          <Property ID="Scope" Type="string"/>
+        </ClassType>
+      </ClassTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.ConnectionDefinition">
+          <Name>Connection Definition</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.ConnectionDefinition" SubElementID="Name">
+          <Name>Name</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.ConnectionDefinition" SubElementID="Version">
+          <Name>Version</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.ConnectionDefinition" SubElementID="Source">
+          <Name>Source</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.ConnectionDefinition" SubElementID="LastModified">
+          <Name>Last Modified</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.ConnectionDefinition" SubElementID="ID">
+          <Name>ID</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.ConnectionDefinition" SubElementID="Disabled">
+          <Name>Disabled</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.ConnectionDefinition" SubElementID="Scope">
+          <Name>Scope</Name>
+          <Description></Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

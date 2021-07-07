@@ -1,0 +1,66 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <ClassTypes>
+        <ClassType ID="CookdownCommunity.Cherwell.Monitoring.CherwellServerInstallation" Base="Windows!Microsoft.Windows.ComputerRole" Accessibility="Internal" Abstract="false" Hosted="true" Singleton="false">
+          <Property ID="HostMode" Type="string"/>
+          <Property ID="Protocol" Type="string"/>
+          <Property ID="Port" Type="int"/>
+          <Property ID="ServerName" Type="string"/>
+          <Property ID="SecurityMode" Type="string"/>
+          <Property ID="Connection" Type="string"/>
+          <Property ID="LogFilePath" Type="string"/>
+          <Property ID="LogToLogServer" Type="bool"/>
+          <Property ID="InstallServer" Type="string" Key="true"/>
+          <Property ID="SettingsVersion" Type="int"/>
+        </ClassType>
+      </ClassTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellServerInstallation">
+          <Name>Cherwell Server Role</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellServerInstallation" SubElementID="HostMode">
+          <Name>Host Mode</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellServerInstallation" SubElementID="Protocol">
+          <Name>Protocol</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellServerInstallation" SubElementID="Port">
+          <Name>Port</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellServerInstallation" SubElementID="ServerName">
+          <Name>Server Name</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellServerInstallation" SubElementID="SecurityMode">
+          <Name>Security Mode</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellServerInstallation" SubElementID="Connection">
+          <Name>Connection</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellServerInstallation" SubElementID="LogFilePath">
+          <Name>Log File Path</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellServerInstallation" SubElementID="LogToLogServer">
+          <Name>Log To LogServer</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellServerInstallation" SubElementID="SettingsVersion">
+          <Name>Settings Version</Name>
+          <Description></Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

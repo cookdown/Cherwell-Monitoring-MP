@@ -1,0 +1,22 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <RelationshipTypes>
+        <RelationshipType ID="CookdownCommunity.Cherwell.Monitoring.CherwellInstallationHostsConnection" Base="System!System.Hosting" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="CookdownCommunity.Cherwell.Monitoring.CherwellServerInstallation"/>
+          <Target ID="Target" Type="CookdownCommunity.Cherwell.Monitoring.ConnectionDefinition"/>
+        </RelationshipType>
+      </RelationshipTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.CherwellInstallationHostsConnection">
+          <Name>CherwellInstallationHostsConnection Relationship</Name>
+          <Description></Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

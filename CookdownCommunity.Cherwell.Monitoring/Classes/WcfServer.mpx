@@ -1,0 +1,40 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <ClassTypes>
+        <ClassType ID="CookdownCommunity.Cherwell.Monitoring.WcfServer" Base="CookdownCommunity.Cherwell.Monitoring.ConnectionDefinition" Accessibility="Internal" Abstract="false" Hosted="true" Singleton="false">
+          <Property ID="Soap" Type="bool"/>
+          <Property ID="Rest" Type="bool"/>
+          <Property ID="AppServerHostMode" Type="string"/>
+          <Property ID="URL" Key="true" Type="string"/>
+        </ClassType>      
+      </ClassTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.WcfServer">
+          <Name>Cherwell Wcf Server Connection</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.WcfServer" SubElementID="Soap">
+          <Name>Soap</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.WcfServer" SubElementID="Rest">
+          <Name>Rest</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.WcfServer" SubElementID="AppServerHostMode">
+          <Name>App Server Host Mode</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="CookdownCommunity.Cherwell.Monitoring.WcfServer" SubElementID="URL">
+          <Name>URL</Name>
+          <Description></Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>
